@@ -1,2 +1,2 @@
-# python-project-template
+# Python-project-template
 Plantilla base para proyectos Python personales
