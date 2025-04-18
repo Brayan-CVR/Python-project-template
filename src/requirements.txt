@@ -1,0 +1,14 @@
+#Automatic documentation
+sphinx
+sphinx_rtd_theme 
+pytest
+setuptools
+wheel 
+build
+
+
+
+#Libs en develop mode
+#-e ./libs/python_information
+--find-links ../libs/python_information/dist
+python_information==1.0.0
