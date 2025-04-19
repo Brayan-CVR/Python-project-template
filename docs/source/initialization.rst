@@ -1,4 +1,4 @@
-initialization package
+Initialization package
 ======================
 
 .. automodule:: initialization
