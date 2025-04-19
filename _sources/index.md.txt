@@ -15,5 +15,9 @@ getting_started
 modules
 ```
 
-## Project Description
-Coming soon...
+## 🚀 Features
+
+- Clean Python project structure
+- Pre-configured testing (pytest)
+- Documentation support (Sphinx/MkDocs)
+- Easy customization for new projects
