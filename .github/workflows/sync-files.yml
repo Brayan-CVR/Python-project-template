@@ -2,55 +2,57 @@ name: Sync Docs to gh-pages
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "main" ]  # Cambia a "master" si esa es tu rama fuente
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
+      - name: Checkout repo
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          ref: main
 
-      - name: Setup Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.x'
-
-      - name: Build docs (ejemplo para Sphinx)
+      - name: Configurar Git
         run: |
-          pip install -r docs/requirements.txt
-          cd docs && make html
+          git config user.name "Brayan-CVR"
+          git config user.email "brayanv395@gmial.com"
 
-      - name: Prepare gh-pages
+      - name: Preparar archivos
         run: |
-          # Configuración esencial de Git
-          git config user.name "GitHub Actions"
-          git config user.email "actions@github.com"
-          
-          # Obtener la rama gh-pages
-          git fetch origin gh-pages:gh-pages
-          
-          # Crear directorio de trabajo
-          mkdir -p publish
-          cp -R docs/build/html/* publish/
+          # Crear carpeta temporal CON los archivos a copiar
+          mkdir -p gh-pages-content
+          cp -R docs/build/html/* gh-pages-content/
 
-      - name: Deploy to gh-pages
+      - name: Actualizar gh-pages
         run: |
-          git checkout gh-pages
+          # Cambiar a la rama gh-pages (se crea si no existe)
+          git checkout --orphan gh-pages || git checkout gh-pages
           
-          # Limpieza selectiva
-          find . -maxdepth 1 ! -name '.git' ! -name '.nojekyll' -exec rm -rf {} +
+          # Conservar solo estos archivos
+          for file in .gitignore .nojekyll; do
+            if [ -f "$file" ]; then
+              mv "$file" ../ 
+            fi
+          done
           
-          # Copiar archivos construidos
-          cp -R publish/* .
-          rm -rf publish
+          # Limpiar TODO excepto .git
+          rm -rf * .[^.]* || true
           
-          # Commit y push
+          # Restaurar archivos protegidos
+          for file in .gitignore .nojekyll; do
+            if [ -f "../$file" ]; then
+              mv "../$file" .
+            fi
+          done
+          
+          # Copiar contenido nuevo
+          cp -R gh-pages-content/* .
+          rm -rf gh-pages-content
+          
+          # Hacer commit (solo si hay cambios)
           git add .
           if [ -n "$(git status --porcelain)" ]; then
-            git commit -m "Docs update $(date +'%Y-%m-%d %H:%M:%S')"
+            git commit -m "Actualización automática: $(date +'%F %T')"
             git push origin gh-pages
           fi
