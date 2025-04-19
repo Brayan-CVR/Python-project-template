@@ -6,10 +6,9 @@ This project is a template for developing specialized routines and utilities.
 Project under development
 ```
 
-## Documentation Overview
+## 📚 Documentation Overview
 
 ```{toctree}
-:maxdepth: 2
 
 getting_started
 modules

@@ -200,7 +200,10 @@
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <ul>
 <li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="initialization.html">Initialization package</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="modules.html">Packages</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Packages</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="initialization.html">Initialization package</a></li>
+</ul>
+</li>
 </ul>
 
 </div>
@@ -249,17 +252,27 @@
 <p>Project under development</p>
 </div>
 <section id="documentation-overview">
-<h2>Documentation Overview<a class="headerlink" href="#documentation-overview" title="Link to this heading">¶</a></h2>
+<h2>📚 Documentation Overview<a class="headerlink" href="#documentation-overview" title="Link to this heading">¶</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="getting_started.html#installation">Installation</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="initialization.html">Initialization package</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="initialization.html#submodules">Submodules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="initialization.html#module-initialization.logger_control">initialization.logger_control module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="initialization.html#module-initialization.system_information">initialization.system_information module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules.html">Packages</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="initialization.html">Initialization package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="initialization.html#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="initialization.html#module-initialization.logger_control">initialization.logger_control module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="initialization.html#initialization.logger_control.get_logger"><code class="docutils literal notranslate"><span class="pre">get_logger()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="initialization.html#initialization.logger_control.start_logger"><code class="docutils literal notranslate"><span class="pre">start_logger()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="initialization.html#module-initialization.system_information">initialization.system_information module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="initialization.html#initialization.system_information.print_python_details"><code class="docutils literal notranslate"><span class="pre">print_python_details()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -323,7 +336,7 @@
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Python-project-template</a><ul>
-<li><a class="reference internal" href="#documentation-overview">Documentation Overview</a></li>
+<li><a class="reference internal" href="#documentation-overview">📚 Documentation Overview</a></li>
 <li><a class="reference internal" href="#features">🚀 Features</a></li>
 </ul>
 </li>
