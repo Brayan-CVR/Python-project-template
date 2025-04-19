@@ -19,5 +19,4 @@ Project under development
 ```{toctree}
 
 getting_started
-modules
 ```
