@@ -1,4 +1,4 @@
-initialization.system\_information module
+Initialization.system\_information module
 =========================================
 
 .. automodule:: initialization.system_information
