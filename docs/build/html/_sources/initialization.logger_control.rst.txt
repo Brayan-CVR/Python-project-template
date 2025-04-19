@@ -1,4 +1,4 @@
-initialization.logger\_control module
+Initialization.logger\_control module
 =====================================
 
 .. automodule:: initialization.logger_control

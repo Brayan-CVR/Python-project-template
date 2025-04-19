@@ -1,4 +1,4 @@
-initialization package
+Initialization package
 ======================
 
 .. automodule:: initialization
@@ -6,8 +6,8 @@ initialization package
    :show-inheritance:
    :undoc-members:
 
-Submodules
-----------
+Modules
+-------
 
 .. toctree::
    :maxdepth: 4
