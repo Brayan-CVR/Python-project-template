@@ -1,4 +1,4 @@
-Initialization package
+initialization package
 ======================
 
 .. automodule:: initialization
@@ -9,18 +9,8 @@ Initialization package
 Submodules
 ----------
 
-initialization.logger\_control module
--------------------------------------
+.. toctree::
+   :maxdepth: 4
 
-.. automodule:: initialization.logger_control
-   :members:
-   :show-inheritance:
-   :undoc-members:
-
-initialization.system\_information module
------------------------------------------
-
-.. automodule:: initialization.system_information
-   :members:
-   :show-inheritance:
-   :undoc-members:
+   initialization.logger_control
+   initialization.system_information
