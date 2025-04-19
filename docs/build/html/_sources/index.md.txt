@@ -12,7 +12,7 @@ Project under development
 :maxdepth: 2
 
 getting_started
-modules/utils
+modules
 ```
 
 ## Project Description
