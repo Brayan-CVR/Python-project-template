@@ -23,7 +23,7 @@ extensions = [
     'myst_parser'  # Soporte para Markdown
 ]
 
-templates_path = ['furo']
+templates_path = []
 exclude_patterns = []
 
 
@@ -31,5 +31,5 @@ exclude_patterns = []
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
-html_theme = 'alabaster'
+html_theme = 'furo'
 html_static_path = ['_static']
