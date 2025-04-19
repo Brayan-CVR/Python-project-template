@@ -8,31 +8,39 @@ jobs:
   sync-files:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repo
+      - name: Checkout repo (main + gh-pages)
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          ref: main  # Asegura que checkout incluye ambas ramas
 
       - name: Setup Git
         run: |
           git config user.name "Brayan-CVR"
           git config user.email "brayanv395@gmial.com"
+          git fetch origin gh-pages:gh-pages  # Trae la rama gh-pages localmente
 
       - name: Copy files
         run: |
           mkdir -p temp_copy
           cp -R docs/build/html/* temp_copy/
+          ls -R temp_copy/  # Debug: verifica que los archivos se copiaron
 
       - name: Update target branch
         run: |
-          git checkout gh-pages 
-          mv .nojekyll ..
-          # Limpieza
+          git checkout gh-pages
+          # Conservar archivos especiales
+          if [ -f .nojekyll ]; then
+            mv .nojekyll ..
+          fi
+          # Limpieza segura
           find . -mindepth 1 ! -name '.git' -exec rm -rf {} +
-          # Restaura y copia
-          mv ../.nojekyll .
-          cp -R ../temp_copy/* .
-          rm -rf ../temp_copy
+          # Restaurar y copiar
+          if [ -f ../.nojekyll ]; then
+            mv ../.nojekyll .
+          fi
+          cp -R temp_copy/* .
+          rm -rf temp_copy
           # Commit
           git add .
           if [ -n "$(git status --porcelain)" ]; then
