@@ -1,4 +1,4 @@
-src
+Packages
 ===
 
 .. toctree::
