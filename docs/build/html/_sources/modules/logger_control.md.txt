@@ -1,0 +1,8 @@
+# Logging Utility
+
+```{eval-rst}
+.. automodule:: logger_control
+   :members:
+   :undoc-members:
+   :show-inheritance:
+```
