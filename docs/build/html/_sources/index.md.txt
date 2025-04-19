@@ -20,4 +20,5 @@ modules
 - Clean Python project structure
 - Pre-configured testing (pytest)
 - Documentation support (Sphinx/MkDocs)
+- GitHub Actions CI/CD pipeline
 - Easy customization for new projects
