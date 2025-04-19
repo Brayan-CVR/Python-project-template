@@ -5,7 +5,8 @@ pytest
 setuptools
 wheel 
 build
-
+myst-parser
+furo
 
 
 #Libs en develop mode
