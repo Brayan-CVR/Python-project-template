@@ -16,7 +16,10 @@ Project under development
 
 ## 📚 Documentation Overview
 
-```{toctree}
-
-getting_started
+```{eval-rst}
+.. toctree::
+   :maxdepth: 2
+   
+   getting_started
+   modules
 ```
