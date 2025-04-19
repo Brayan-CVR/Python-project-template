@@ -1,8 +1,11 @@
+# git config user.name "Brayan-CVR"
+# git config user.email "brayanv395@gmial.com"
+
 name: Sync Docs to gh-pages
 
 on:
   push:
-    branches: [ "main" ]  # Cambia a "master" si esa es tu rama fuente
+    branches: [ "main" ]
 
 jobs:
   deploy:
@@ -18,41 +21,52 @@ jobs:
           git config user.name "Brayan-CVR"
           git config user.email "brayanv395@gmial.com"
 
-      - name: Preparar archivos
+      - name: Preparar contenido
         run: |
-          # Crear carpeta temporal CON los archivos a copiar
-          mkdir -p gh-pages-content
-          cp -R docs/build/html/* gh-pages-content/
+          # Verificar que la fuente existe
+          ls -la docs/build/html/
+          
+          # Copiar contenido a directorio temporal persistente
+          mkdir -p ~/gh-pages-temp
+          cp -R docs/build/html/* ~/gh-pages-temp/
+          
+          # Verificar copia exitosa
+          ls -la ~/gh-pages-temp/
 
       - name: Actualizar gh-pages
         run: |
-          # Cambiar a la rama gh-pages (se crea si no existe)
-          git checkout --orphan gh-pages || git checkout gh-pages
+          # Cambiar a gh-pages (crear si no existe)
+          if ! git checkout gh-pages 2>/dev/null; then
+            git checkout --orphan gh-pages
+            git rm -rf .
+          fi
           
-          # Conservar solo estos archivos
+          # Conservar archivos importantes
           for file in .gitignore .nojekyll; do
             if [ -f "$file" ]; then
-              mv "$file" ../ 
+              mv "$file" /tmp/
             fi
           done
           
-          # Limpiar TODO excepto .git
-          rm -rf * .[^.]* || true
+          # Limpiar todo excepto .git
+          find . -mindepth 1 -maxdepth 1 ! -name '.git' -exec rm -rf {} +
           
-          # Restaurar archivos protegidos
+          # Restaurar archivos importantes
           for file in .gitignore .nojekyll; do
-            if [ -f "../$file" ]; then
-              mv "../$file" .
+            if [ -f "/tmp/$file" ]; then
+              mv "/tmp/$file" .
             fi
           done
           
-          # Copiar contenido nuevo
-          cp -R gh-pages-content/* .
-          rm -rf gh-pages-content
+          # Copiar nuevo contenido
+          cp -R ~/gh-pages-temp/* .
           
-          # Hacer commit (solo si hay cambios)
+          # Commit y push
           git add .
           if [ -n "$(git status --porcelain)" ]; then
-            git commit -m "Actualización automática: $(date +'%F %T')"
+            git commit -m "Actualización: $(date +'%F %T')"
             git push origin gh-pages
           fi
+          
+          # Limpieza
+          rm -rf ~/gh-pages-temp
