@@ -1,11 +1,11 @@
-## 🚀 Getting Started
+# 🚀 Getting Started
 
-### 📦 Requirements
+## 📦 Requirements
 
 - Python 3.13 or higher.
 - [Poetry](https://python-poetry.org/docs/#installation) installed.
 
-### Installation
+## Installation
 
 - First check if you have Poetry in your global Python version:
 
@@ -32,7 +32,7 @@ poetry install
 
 - This create the virtual enviroment in your project forlder. 
 
-### Execution 
+## Execution 
 
 - Finally, to execute the project run:
 
@@ -40,7 +40,7 @@ poetry install
 poetry run python src/main.py 
 ```
 
-### Add and install new libraries
+## Add and install new libraries
 
 ```bash
 poetry add pandas
