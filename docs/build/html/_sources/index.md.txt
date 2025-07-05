@@ -20,6 +20,7 @@ Project under development
 .. toctree::
    :maxdepth: 2
    
+   about_this_documentation
    getting_started
    modules
 ```
