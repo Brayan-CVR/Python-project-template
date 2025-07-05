@@ -43,11 +43,13 @@
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">🚀 Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#requirements">📦 Requirements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#installation">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#execution">Execution</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#add-and-install-new-libraries">Add and install new libraries</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">🚀 Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#requirements">📦 Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#execution">Execution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#add-and-install-new-libraries">Add and install new libraries</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="modules.html">Packages</a></li>
 </ul>
 
@@ -77,26 +79,31 @@
              
   <section id="getting-started">
 <h1>🚀 Getting Started<a class="headerlink" href="#getting-started" title="Link to this heading"></a></h1>
-</section>
 <section id="requirements">
-<h1>📦 Requirements<a class="headerlink" href="#requirements" title="Link to this heading"></a></h1>
+<h2>📦 Requirements<a class="headerlink" href="#requirements" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p>Python 3.13 or higher.</p></li>
 <li><p><a class="reference external" href="https://python-poetry.org/docs/#installation">Poetry</a> installed.</p></li>
 </ul>
 </section>
 <section id="installation">
-<h1>Installation<a class="headerlink" href="#installation" title="Link to this heading"></a></h1>
-<p>First check if you have Poetry in your global Python version:</p>
+<h2>Installation<a class="headerlink" href="#installation" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>First check if you have Poetry in your global Python version:</p></li>
+</ul>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>poetry<span class="w"> </span>--version
 <span class="c1"># (Poetry (version 2.1.3)) &lt;--- Expected result.</span>
 </pre></div>
 </div>
-<p>If not installed:</p>
+<ul class="simple">
+<li><p>If not installed:</p></li>
+</ul>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>poetry
 </pre></div>
 </div>
-<p>Follow these steps to install dependencies, and run the project:</p>
+<ul class="simple">
+<li><p>Follow these steps to install dependencies, and run the project:</p></li>
+</ul>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Configure Poetry to create the virtual environment inside the project folder</span>
 poetry<span class="w"> </span>config<span class="w"> </span>virtualenvs.in-project<span class="w"> </span><span class="nb">true</span>
 
@@ -104,20 +111,25 @@ poetry<span class="w"> </span>config<span class="w"> </span>virtualenvs.in-proje
 poetry<span class="w"> </span>install
 </pre></div>
 </div>
-<p>This create the virtual enviroment in your project forlder.</p>
+<ul class="simple">
+<li><p>This create the virtual enviroment in your project forlder.</p></li>
+</ul>
 </section>
 <section id="execution">
-<h1>Execution<a class="headerlink" href="#execution" title="Link to this heading"></a></h1>
-<p>Finally, to execute the project run:</p>
+<h2>Execution<a class="headerlink" href="#execution" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Finally, to execute the project run:</p></li>
+</ul>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>poetry<span class="w"> </span>run<span class="w"> </span>python<span class="w"> </span>src/main.py<span class="w"> </span>
 </pre></div>
 </div>
 </section>
 <section id="add-and-install-new-libraries">
-<h1>Add and install new libraries<a class="headerlink" href="#add-and-install-new-libraries" title="Link to this heading"></a></h1>
+<h2>Add and install new libraries<a class="headerlink" href="#add-and-install-new-libraries" title="Link to this heading"></a></h2>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>poetry<span class="w"> </span>add<span class="w"> </span>pandas
 </pre></div>
 </div>
+</section>
 </section>
 
 
