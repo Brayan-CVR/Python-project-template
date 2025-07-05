@@ -46,7 +46,7 @@ poetry run python src/main.py
 poetry add pandas
 ```
 
-## 📝 Remove libraries
+## ❌ Remove libraries
 
 ```bash
 poetry remove pandas
