@@ -170,24 +170,39 @@
 <dl class="py function">
 <dt class="sig sig-object py" id="initialization.logger_control.get_logger">
 <span class="sig-prename descclassname"><span class="pre">initialization.logger_control.</span></span><span class="sig-name descname"><span class="pre">get_logger</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Logger</span></span></span><a class="reference internal" href="_modules/initialization/logger_control.html#get_logger"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#initialization.logger_control.get_logger" title="Link to this definition">¶</a></dt>
-<dd><p>_summary_</p>
+<dd><p>Get a logger instance with the specified name.</p>
+<p>Creates or retrieves a logger with the given name. The logger will inherit
+the configuration set by start_logger() if it has been called previously.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – _description_</p>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – Name to identify the logger. Typically you would use __name__
+to automatically create loggers that match the module hierarchy.</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>_description_</p>
+<dd class="field-even"><p>Configured logger instance ready for use.</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>logging.Logger</p>
 </dd>
 </dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">logger</span> <span class="o">=</span> <span class="n">get_logger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;This is an info message&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="initialization.logger_control.start_logger">
 <span class="sig-prename descclassname"><span class="pre">initialization.logger_control.</span></span><span class="sig-name descname"><span class="pre">start_logger</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/initialization/logger_control.html#start_logger"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#initialization.logger_control.start_logger" title="Link to this definition">¶</a></dt>
-<dd><p>_summary_</p>
+<dd><p>Initialize the basic configuration for the logging system.</p>
+<p>This function sets up the root logger with a basic configuration that includes:
+- Logging level: INFO (captures INFO, WARNING, ERROR and CRITICAL messages)</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This should be called only once at the beginning of the application setup.
+Subsequent calls won’t have any effect unless the logging system is reset.</p>
+</div>
 </dd></dl>
 
 </section>
