@@ -664,21 +664,6 @@ sphinx = ">=4.0"
 docs = ["furo", "ipython", "myst-parser", "sphinx-copybutton", "sphinx-inline-tabs"]
 
 [[package]]
-name = "sphinx-documatt-theme"
-version = "0.0.6"
-description = "Documatt Theme for Sphinx documentation projects"
-optional = false
-python-versions = "*"
-groups = ["main"]
-files = [
-    {file = "sphinx_documatt_theme-0.0.6-py3-none-any.whl", hash = "sha256:1df25a2786b110d4b2d0fc2f92a5c57dc7b7b038c0d6477c8348a28d0f19e636"},
-    {file = "sphinx_documatt_theme-0.0.6.tar.gz", hash = "sha256:36f50343d71f387693af773ba8eb21c60ed89f499e164bc01dcf5540d180c2b3"},
-]
-
-[package.dependencies]
-sphinx = "*"
-
-[[package]]
 name = "sphinx-rtd-theme"
 version = "3.0.2"
 description = "Read the Docs theme for Sphinx"
@@ -846,4 +831,4 @@ zstd = ["zstandard (>=0.18.0)"]
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.13"
-content-hash = "0c0705e745486d71751a13d6a837cb4394046b6d3b2d249a347fa9a258a30e41"
+content-hash = "1d1b4c5873e9fc81f6751665a1d51d0e4268a89b791d43d9f0022ff60f92fc21"
