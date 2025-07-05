@@ -6,7 +6,7 @@ This project is a template for developing specialized routines and utilities.
 Project under development
 ```
 
-## 🚀 Features
+## 💫 Features
 
 - Clean Python project structure
 - Pre-configured testing (pytest)
