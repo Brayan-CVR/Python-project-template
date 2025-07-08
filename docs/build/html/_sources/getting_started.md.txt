@@ -17,7 +17,7 @@ poetry --version
 - If not installed:
 
 ```bash
-pip install poetry
+poetry install --no-root 
 ```
 
 - Follow these steps to install dependencies, and run the project:
